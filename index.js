@@ -30,8 +30,8 @@ app.post('/submit', (req, res) => {
     const query = 'INSERT INTO users (name, email, message) VALUES ($1, $2, $3)';
     pool.query(query, [name, email, message], (err, result) => {
         if (err) {
-            console.error('Error inserting data into the database:', err);
-            res.status(500).send('Error saving data');
+            console.error('Error inserting data into the database:', err.message);
+            res.status(500).send(`Error saving data: ${err.message}`);
         } else {
             console.log('Data saved successfully');
             res.send('Form submitted successfully!');
