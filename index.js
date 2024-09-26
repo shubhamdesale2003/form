@@ -7,10 +7,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
 
 const pool = new pg.Pool({
-    user:'postgres',
-    host:'localhost',
-    database:'sampledb',
-    password:'root',
+    user:'sampledb_xk12_user',
+    host:'dpg-crql6eij1k6c738ilsdg-a',
+    database:'sampledb_xk12',
+    password:'OxLmhcX5zJV5FXwYkj04HPponqWjvLqP',
     port:5432
 })
 
