@@ -11,7 +11,8 @@ const pool = new pg.Pool({
     host:'dpg-crsl8kbtq21c73dghrng-a.oregon-postgres.render.com',
     database:'testdb_sojv',
     password:'USiAiQzPqTFciV7pW7qd9BtKG0ZSZNNb',
-    port:5432
+    port:5432,
+    ssl: { rejectUnauthorized: false }
 })
 
 pool.connect((err)=>{
