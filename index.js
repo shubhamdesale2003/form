@@ -7,10 +7,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
 
 const pool = new pg.Pool({
-    user:'postgres',
-    host:'localhost',
-    database:'sampledb',
-    password:'root',
+    user:'testdb',
+    host:'dpg-crsl8kbtq21c73dghrng-a.oregon-postgres.render.com',
+    database:'testdb_sojv',
+    password:'USiAiQzPqTFciV7pW7qd9BtKG0ZSZNNb',
     port:5432
 })
 
@@ -27,7 +27,7 @@ app.post('/submit', (req, res) => {
     const { name, email, message } = req.body;
 
     // Insert the data into the database
-    const query = 'INSERT INTO users (name, email, message) VALUES ($1, $2, $3)';
+    const query = 'INSERT INTO user2 (name, email, message) VALUES ($1, $2, $3)';
     pool.query(query, [name, email, message], (err, result) => {
         if (err) {
             console.error('Error inserting data into the database:', err.message);
